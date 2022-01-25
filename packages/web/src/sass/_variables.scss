@@ -1,0 +1,29 @@
+@use 'sass:map';
+@use '@angular/material' as mat;
+@import 'breakpoints';
+
+@include mat.core();
+
+$background: #303030;
+$foreground: #424242;
+$primary: rgb(123, 31, 162);
+
+@mixin flexCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin card {
+  background: $foreground;
+  border-radius: 5px;
+  @include mat.elevation(2);
+}
+
+@mixin horizontalPadding {
+  padding: 0 20px;
+
+  @include media('>=desktop') {
+    padding: 0 50px;
+  }
+}

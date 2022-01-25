@@ -1,19 +1,29 @@
 /* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@import 'breakpoints';
+@import 'typography';
+
+$my-custom-typography: mat.define-typography-config(
+  $font-family: Rubik,
+);
+
+@include mat.core($my-custom-typography);
 
 html,
 body {
   height: 100%;
 }
+
 body {
   margin: 0;
-  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  font-family: Rubik, 'Helvetica Neue', sans-serif;
+  font-size: 14px;
+
+  @include media('>=desktop') {
+    font-size: 16px !important;
+  }
 }
 
 ::-webkit-scrollbar {
   display: none;
-}
-
-h1 {
-  font-size: 32px;
-  line-height: 38px;
 }
