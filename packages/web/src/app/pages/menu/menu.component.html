@@ -6,27 +6,7 @@
         shopping_cart
       </mat-icon>
     </div>
-    <form class="example-form">
-      <mat-form-field class="example-full-width" appearance="fill">
-        <mat-label>Number</mat-label>
-        <input
-          type="text"
-          placeholder="Pick one"
-          aria-label="Number"
-          matInput
-          [formControl]="myControl"
-          [matAutocomplete]="auto"
-        />
-        <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
-          <mat-option
-            *ngFor="let option of filteredOptions | async"
-            [value]="option"
-          >
-            {{ option }}
-          </mat-option>
-        </mat-autocomplete>
-      </mat-form-field>
-    </form>
+    <chefia-select-menu-category></chefia-select-menu-category>
     <h2 class="subtitle">Ofertas</h2>
     <div class="cards-container">
       <chefia-offer-card></chefia-offer-card>

@@ -6,16 +6,25 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './modules/material/material.module';
 import { AppRoutingModule } from './modules/app-routing.module';
 import { MenuComponent } from './pages/menu/menu.component';
-import { MainContentWrapperComponent } from './components/main-content-wrapper/main-content-wrapper.component';
 import { OfferCardComponent } from './components/cards/offer-card/offer-card.component';
+import { BrazilianRealsPipe } from './pipes/brazilian-reals.pipe';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SelectMenuCategoryComponent } from './components/forms/select-menu-category/select-menu-category.component';
 
 @NgModule({
-  declarations: [AppComponent, MenuComponent, MainContentWrapperComponent, OfferCardComponent],
+  declarations: [
+    AppComponent,
+    MenuComponent,
+    OfferCardComponent,
+    BrazilianRealsPipe,
+    SelectMenuCategoryComponent,
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
     AppRoutingModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
