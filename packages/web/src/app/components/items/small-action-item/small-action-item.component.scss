@@ -1,0 +1,23 @@
+@import 'variables';
+
+.small-action-item-container {
+  display: flex;
+
+  .image-layer {
+    border-radius: 15px;
+    @include card(15px);
+    @include flexCenter;
+  }
+
+  .details-layer {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 5px;
+
+    h2 {
+      margin-bottom: 0 !important;
+    }
+  }
+}

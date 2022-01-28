@@ -8,15 +8,16 @@ $background: #303030;
 $foreground: #424242;
 $primary: rgb(123, 31, 162);
 
-@mixin flexCenter {
+@mixin flexCenter($direction: 'row') {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: $direction;
 }
 
-@mixin card {
+@mixin card($radius) {
   background: $foreground;
-  border-radius: 5px;
+  border-radius: $radius;
   @include mat.elevation(2);
 }
 

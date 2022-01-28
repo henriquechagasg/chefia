@@ -27,9 +27,14 @@
       }
     }
 
-    .cards-container {
+    .offer-cards-layer {
       display: flex;
       overflow-x: scroll;
+      margin-bottom: 2rem;
+    }
+
+    .small-action-items-layer {
+      margin: 2rem 0;
     }
   }
 }

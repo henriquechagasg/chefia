@@ -1,0 +1,37 @@
+@import 'variables';
+
+.add-to-cart-button-container {
+  display: flex;
+
+  .mat-flat-button {
+    padding: 0px 8px;
+    min-width: 0px;
+    line-height: 36px;
+    height: 34px;
+  }
+
+  .btn {
+    vertical-align: middle;
+    border: 1px solid $primary;
+    mat-icon {
+      font-size: 18px;
+    }
+  }
+
+  .remove {
+    border-radius: 28px 0px 0px 28px;
+  }
+
+  .add {
+    border-radius: 0px 28px 28px 0px;
+  }
+
+  .value-layer {
+    height: 32px;
+    width: 45px;
+    overflow-y: hidden;
+    font-size: 16px;
+    border: 1px solid $primary;
+    @include flexCenter;
+  }
+}

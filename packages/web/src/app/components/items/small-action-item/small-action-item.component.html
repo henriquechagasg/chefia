@@ -1,0 +1,16 @@
+<div class="small-action-item-container">
+  <div class="image-layer">
+    <img src="../../../../assets/images/small-action-item.png" alt="" />
+  </div>
+  <div class="details-layer">
+    <h2>{{ title.length > 20 ? (title | slice: 0:19) + '..' : title }}</h2>
+    <p>
+      {{
+        descriptions.length > 65
+          ? (descriptions | slice: 0:65) + '..'
+          : descriptions
+      }}
+    </p>
+    <chefia-add-to-cart-button></chefia-add-to-cart-button>
+  </div>
+</div>
