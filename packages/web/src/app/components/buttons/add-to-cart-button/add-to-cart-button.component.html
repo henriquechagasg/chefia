@@ -1,11 +1,37 @@
 <div class="add-to-cart-button-container">
-  <button class="btn remove" mat-flat-button color="primary">
+  <button
+    class="btn remove"
+    mat-flat-button
+    color="primary"
+    (click)="removeItem()"
+  >
     <mat-icon>remove</mat-icon>
   </button>
   <div class="value-layer">
-    <span>1</span>
+    <span
+      [@removeItem]="removeClicked ? 'secondNoTranslated' : 'secondTranslated'"
+      class="animation-item"
+    >
+      {{ value - 1 }}
+    </span>
+    <span
+      [@addItem]="addClicked ? 'firstTranslated' : 'firstNoTranslated'"
+      (@addItem.start)="isAnimating = true"
+      (@addItem.done)="isAnimating = false"
+      [@removeItem]="removeClicked ? 'firstTranslated' : 'firstNoTranslated'"
+      (@removeItem.start)="isAnimating = true"
+      (@removeItem.done)="isAnimating = false"
+    >
+      {{ value }}
+    </span>
+    <span
+      class="animation-item"
+      [@addItem]="addClicked ? 'secondNoTranslated' : 'secondTranslated'"
+    >
+      {{ value + 1 }}
+    </span>
   </div>
-  <button class="btn add" mat-flat-button color="primary">
+  <button class="btn add" mat-flat-button color="primary" (click)="addItem()">
     <mat-icon>add</mat-icon>
   </button>
 </div>
