@@ -28,3 +28,10 @@ $primary: rgb(123, 31, 162);
     padding: 0 50px;
   }
 }
+
+@mixin truncate($lines) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

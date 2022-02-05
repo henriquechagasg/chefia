@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @use '@angular/material' as mat;
+@import 'variables';
 @import 'breakpoints';
 @import 'typography';
 
@@ -18,6 +19,7 @@ body {
   margin: 0;
   font-family: Rubik, 'Helvetica Neue', sans-serif;
   font-size: 14px;
+  overflow: auto;
 
   @include media('>=desktop') {
     font-size: 16px !important;
@@ -25,5 +27,23 @@ body {
 }
 
 ::-webkit-scrollbar {
-  display: none;
+  width: 12px;
+  height: 12px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(233, 232, 232, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  border: 3px solid rgba(233, 232, 232, 0.5);
+  background: rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: rgba($primary, 0.3);
 }

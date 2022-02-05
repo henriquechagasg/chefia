@@ -3,12 +3,14 @@
 
 .menu-container {
   display: flex;
+  width: auto;
 
   .title {
     margin: 0 !important;
   }
 
   .first-section-layer {
+    width: 100%;
     max-width: calc(100% - 40px);
     @include horizontalPadding;
 
@@ -21,16 +23,45 @@
       align-items: center;
       justify-content: space-between;
       margin-bottom: 2rem;
+      width: 100%;
 
       mat-icon {
         color: rgba(#fff, 0.5);
+      }
+
+      @include media('>=desktop') {
+        margin-bottom: 3.5rem;
       }
     }
 
     .offer-cards-layer {
       display: flex;
-      overflow-x: scroll;
+      overflow-x: auto;
       margin: 2rem 0;
+      padding-bottom: 1rem;
+
+      &::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      &::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background: rgba(0, 0, 0, 0.1);
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        border: none;
+        background: rgba(0, 0, 0, 0.2);
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background: rgba(0, 0, 0, 0.4);
+      }
+
+      &::-webkit-scrollbar-thumb:active {
+        background: rgba(0, 0, 0, 0.4);
+      }
     }
 
     .small-action-items-layer {

@@ -3,14 +3,14 @@
     <img src="../../../../assets/images/small-action-item.png" alt="" />
   </div>
   <div class="details-layer">
-    <h2>{{ title.length > 20 ? (title | slice: 0:19) + '..' : title }}</h2>
-    <p>
-      {{
-        descriptions.length > 65
-          ? (descriptions | slice: 0:65) + '..'
-          : descriptions
-      }}
-    </p>
+    <div class="title-wrapper">
+      <h2>{{ title }}</h2>
+    </div>
+    <div class="descriptions-wrapper">
+      <p>
+        {{ descriptions }}
+      </p>
+    </div>
     <chefia-add-to-cart-button></chefia-add-to-cart-button>
   </div>
 </div>

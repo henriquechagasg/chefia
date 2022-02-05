@@ -5,13 +5,11 @@
   </div>
   <img mat-card-image src="../../../../assets/images/menu-item-1.png" />
   <div class="content">
-    <h1 class="title">Rose & Fern</h1>
-    <span class="description">
-      {{
-        cardDescription.length > 73
-          ? (cardDescription | slice: 0:73) + '...'
-          : cardDescription
-      }}
-    </span>
+    <div class="title-wrapper">
+      <h1 class="title">Rose & Fern</h1>
+    </div>
+    <div class="description">
+      {{ cardDescription }}
+    </div>
   </div>
 </div>

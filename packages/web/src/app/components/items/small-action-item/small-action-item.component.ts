@@ -7,7 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SmallActionItemComponent implements OnInit {
   title = 'Miso Ginger Quinoa';
-  descriptions = 'Buttery, flaky pastry named for its crescent shape.';
+  descriptions =
+    'Buttery, flaky pastry named for its crescent shape. Buttery, flaky pastry named for its crescent shape. Buttery, flaky pastry named for its crescent shape. uttery, flaky pastry named for its crescent shape. uttery, flaky pastry named for its crescent shape. uttery, flaky pastry named for its crescent shape. uttery, flaky pastry named for its crescent shape.uttery, flaky pastry named for its crescent shape.';
   constructor() {}
 
   ngOnInit(): void {}
