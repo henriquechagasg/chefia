@@ -1,36 +1,29 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
 import { AppComponent } from './app.component';
+import { CoreModule } from './core/core.module';
+import { AppRoutingModule } from './app-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { MaterialModule } from './modules/material/material.module';
-import { AppRoutingModule } from './modules/app-routing.module';
-import { MenuComponent } from './pages/menu/menu.component';
-import { OfferCardComponent } from './components/cards/offer-card/offer-card.component';
-import { BrazilianRealsPipe } from './pipes/brazilian-reals.pipe';
-import { ReactiveFormsModule } from '@angular/forms';
-import { SelectMenuCategoryComponent } from './components/forms/select-menu-category/select-menu-category.component';
-import { SmallActionItemComponent } from './components/items/small-action-item/small-action-item.component';
-import { AddToCartButtonComponent } from './components/buttons/add-to-cart-button/add-to-cart-button.component';
+import { SharedModule } from './shared/shared.module';
+import { ShopModule } from './shop/shop.module';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    MenuComponent,
-    OfferCardComponent,
-    BrazilianRealsPipe,
-    SelectMenuCategoryComponent,
-    SmallActionItemComponent,
-    AddToCartButtonComponent,
-  ],
+  declarations: [AppComponent],
   imports: [
+    //Angular
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule,
     AppRoutingModule,
-    ReactiveFormsModule,
+
+    //Core
+    CoreModule,
+
+    //Shared
+    SharedModule,
+
+    //Features
+    ShopModule,
   ],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
