@@ -1,14 +1,19 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from '../app-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { ShopComponent } from './shop.component';
-
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { MenuModule } from './menu/menu.module';
+import { ProductModule } from './product/product.module';
+import { ShopRoutingModule } from './shop-routing.module';
 
 @NgModule({
-  imports: [CommonModule, SharedModule, AppRoutingModule],
+  imports: [
+    CommonModule,
+    SharedModule,
+    MenuModule,
+    ProductModule,
+    ShopRoutingModule,
+  ],
   declarations: [ShopComponent],
   exports: [],
 })

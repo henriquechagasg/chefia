@@ -1,13 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MenuComponent } from './shop/menu/menu.component';
-import { ShopComponent } from './shop/shop.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   {
-    path: 'menu',
-    component: ShopComponent,
-    children: [{ path: '', component: MenuComponent, outlet: 'shop' }],
+    path: ':restaurant',
+    children: [
+      {
+        path: 'menu',
+        loadChildren: () =>
+          import('./shop/shop.module').then((m) => m.ShopModule),
+      },
+    ],
   },
 ];
 
