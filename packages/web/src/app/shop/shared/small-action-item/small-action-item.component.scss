@@ -1,0 +1,32 @@
+@import 'variables';
+
+.small-action-item-container {
+  display: flex;
+  max-width: 700px;
+  max-height: 150px;
+
+  .image-layer {
+    border-radius: 15px;
+    @include card(15px);
+    @include flexCenter;
+  }
+
+  .details-layer {
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .title-wrapper {
+      @include truncate(1);
+
+      h2 {
+        margin-bottom: 0 !important;
+      }
+    }
+
+    .descriptions-wrapper {
+      @include truncate(3);
+    }
+  }
+}
