@@ -10,9 +10,14 @@ import { ShopSharedModule } from './shared/shop-shared.module';
 @NgModule({
   imports: [
     CommonModule,
+
+    //Shared
     SharedModule,
     ShopSharedModule,
+
     ShopRoutingModule,
+
+    // Features
     MenuModule,
     ProductModule,
   ],

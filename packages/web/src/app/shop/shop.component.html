@@ -1,5 +1,17 @@
+<mat-toolbar *ngIf="!isLargeSize" class="toolbar-container">
+  <button mat-icon-button aria-label="hamburger" (click)="drawer.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="restaurant">Tokyo</span>
+</mat-toolbar>
 <mat-drawer-container class="shop-container" autosize>
-  <mat-drawer *ngIf="isLargeSize" class="shop-sidenav" mode="side" opened>
+  <mat-drawer
+    #drawer
+    class="shop-sidenav"
+    [mode]="isLargeSize ? 'side' : 'over'"
+    [(opened)]="sideNavOpened"
+  >
+    <button mat-button (click)="drawer.toggle()">Close</button>
   </mat-drawer>
   <mat-drawer-content>
     <main>

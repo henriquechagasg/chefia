@@ -1,28 +1,44 @@
-import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-import { Component, OnDestroy } from '@angular/core';
-import { Subject, takeUntil } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { ScreenSizeService } from '../core/services/screen-size.service';
 
 @Component({
   selector: 'chefia-shop',
   templateUrl: './shop.component.html',
   styleUrls: ['./shop.component.scss'],
 })
-export class ShopComponent implements OnDestroy {
-  destroyed = new Subject<void>();
+export class ShopComponent implements OnInit, OnDestroy {
   isLargeSize = false;
-  title = 'web';
 
-  constructor(breakpointObserver: BreakpointObserver) {
-    breakpointObserver
-      .observe([Breakpoints.Large, Breakpoints.XLarge])
-      .pipe(takeUntil(this.destroyed))
-      .subscribe((result) => {
-        this.isLargeSize = result.matches;
-      });
+  isLargeSizeSub: Subscription;
+
+  sideNavOpened = false;
+
+  sideNavState: string;
+
+  constructor(private screenSizeService: ScreenSizeService) {}
+
+  ngOnInit(): void {
+    this.isLargeSizeSub = this.screenSizeService.isLargeSize.subscribe(
+      (isLargeSize) => {
+        const openSideNavOnLargeSize = isLargeSize && !this.sideNavOpened;
+
+        const closeSideNavOnSmallSize = this.isLargeSize && !isLargeSize;
+
+        if (openSideNavOnLargeSize) {
+          this.sideNavOpened = true;
+        }
+
+        if (closeSideNavOnSmallSize) {
+          this.sideNavOpened = false;
+        }
+
+        this.isLargeSize = isLargeSize;
+      }
+    );
   }
 
-  ngOnDestroy() {
-    this.destroyed.next();
-    this.destroyed.complete();
+  ngOnDestroy(): void {
+    this.isLargeSizeSub.unsubscribe();
   }
 }

@@ -8,6 +8,7 @@ import { MatBadgeModule } from '@angular/material/badge';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 const MaterialComponents = [
   MatSidenavModule,
@@ -19,6 +20,7 @@ const MaterialComponents = [
   MatAutocompleteModule,
   MatFormFieldModule,
   MatInputModule,
+  MatToolbarModule,
 ];
 
 @NgModule({

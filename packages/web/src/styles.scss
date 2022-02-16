@@ -13,13 +13,14 @@ $my-custom-typography: mat.define-typography-config(
 html,
 body {
   height: 100%;
+  overflow-y: hidden;
 }
 
 body {
   margin: 0;
   font-family: Rubik, 'Helvetica Neue', sans-serif;
   font-size: 14px;
-  overflow: auto;
+  // overflow: auto;
 
   @include media('>=desktop') {
     font-size: 16px !important;
