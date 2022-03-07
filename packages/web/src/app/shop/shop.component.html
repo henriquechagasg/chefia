@@ -1,21 +1,9 @@
-<mat-toolbar *ngIf="!isLargeSize" class="toolbar-container">
-  <button mat-icon-button aria-label="hamburger" (click)="drawer.toggle()">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span class="restaurant">Tokyo</span>
-</mat-toolbar>
-<mat-drawer-container class="shop-container" autosize>
-  <mat-drawer
-    #drawer
-    class="shop-sidenav"
-    [mode]="isLargeSize ? 'side' : 'over'"
-    [(opened)]="sideNavOpened"
-  >
-    <button mat-button (click)="drawer.toggle()">Close</button>
-  </mat-drawer>
-  <mat-drawer-content>
-    <main>
-      <router-outlet></router-outlet>
-    </main>
-  </mat-drawer-content>
-</mat-drawer-container>
+<chefia-toolbar
+  title="Tokyo"
+  (menuClicked)="toggleDrawer = !toggleDrawer"
+></chefia-toolbar>
+<chefia-shop-drawer [toggle]="toggleDrawer">
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</chefia-shop-drawer>

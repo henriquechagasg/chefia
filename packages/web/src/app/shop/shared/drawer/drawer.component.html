@@ -1,0 +1,13 @@
+<mat-drawer-container class="shop-container" autosize>
+  <mat-drawer
+    #drawer
+    class="shop-sidenav"
+    [mode]="isLargeSize ? 'side' : 'over'"
+    [(opened)]="sideNavOpened"
+  >
+    <button mat-button (click)="toggleDrawer()">Close</button>
+  </mat-drawer>
+  <mat-drawer-content>
+    <ng-content></ng-content>
+  </mat-drawer-content>
+</mat-drawer-container>
