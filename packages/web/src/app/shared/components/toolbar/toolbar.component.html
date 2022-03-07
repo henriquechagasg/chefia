@@ -1,0 +1,6 @@
+<mat-toolbar *ngIf="!isLargeSize" class="toolbar-container">
+  <button mat-icon-button aria-label="hamburger" (click)="clickHamburguer()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="restaurant">{{ title }}</span>
+</mat-toolbar>

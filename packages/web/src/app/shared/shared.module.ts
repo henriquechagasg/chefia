@@ -3,21 +3,25 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material/material.module';
 import { BrazilianRealsPipe } from './pipes/brazilian-reals/brazilian-reals.pipe';
+import { ToolbarComponent } from './components/toolbar/toolbar.component';
 
 @NgModule({
   imports: [
+    CommonModule,
+    //Material
+    MaterialModule,
+  ],
+  declarations: [BrazilianRealsPipe, ToolbarComponent],
+  exports: [
     // Angular
     CommonModule,
     ReactiveFormsModule,
 
+    //Material
     MaterialModule,
-  ],
-  declarations: [BrazilianRealsPipe],
-  exports: [
-    CommonModule,
-    ReactiveFormsModule,
 
-    MaterialModule,
+    //Components
+    ToolbarComponent,
 
     //Pipes
     BrazilianRealsPipe,
