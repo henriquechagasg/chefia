@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material/material.module';
 import { BrazilianRealsPipe } from './pipes/brazilian-reals/brazilian-reals.pipe';
 import { ToolbarComponent } from './components/toolbar/toolbar.component';
+import { DrawerButtonComponent } from './components/drawer-button/drawer-button.component';
 
 @NgModule({
   imports: [
@@ -11,7 +12,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
     //Material
     MaterialModule,
   ],
-  declarations: [BrazilianRealsPipe, ToolbarComponent],
+  declarations: [BrazilianRealsPipe, ToolbarComponent, DrawerButtonComponent],
   exports: [
     // Angular
     CommonModule,
@@ -22,6 +23,7 @@ import { ToolbarComponent } from './components/toolbar/toolbar.component';
 
     //Components
     ToolbarComponent,
+    DrawerButtonComponent,
 
     //Pipes
     BrazilianRealsPipe,

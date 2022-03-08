@@ -1,0 +1,18 @@
+.drawer-button {
+  width: 100%;
+  height: 50px;
+  border-radius: 8px;
+  margin-bottom: 5px;
+
+  .items-layer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    font-size: 18px;
+
+    .button-title {
+      font-weight: 400;
+    }
+  }
+}

@@ -5,7 +5,19 @@
     [mode]="isLargeSize ? 'side' : 'over'"
     [(opened)]="sideNavOpened"
   >
-    <button mat-button (click)="toggleDrawer()">Close</button>
+    <chefia-drawer-button
+      (click)="clicked()"
+      [active]="false"
+      [icon]="'people'"
+    >
+      Sobre
+    </chefia-drawer-button>
+    <chefia-drawer-button (click)="clicked()" [active]="true" [icon]="'menu'">
+      Cardápio
+    </chefia-drawer-button>
+    <chefia-drawer-button (click)="clicked()" [active]="false" [icon]="'menu'">
+      Checkout
+    </chefia-drawer-button>
   </mat-drawer>
   <mat-drawer-content>
     <ng-content></ng-content>

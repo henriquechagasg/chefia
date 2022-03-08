@@ -1,0 +1,14 @@
+<button
+  mat-button
+  [class.mat-raised-button]="active"
+  class="drawer-button"
+  (click)="click()"
+  color="{{ color }}"
+>
+  <span class="items-layer">
+    <span class="button-title">
+      <ng-content></ng-content>
+    </span>
+    <mat-icon>{{ icon }}</mat-icon>
+  </span>
+</button>

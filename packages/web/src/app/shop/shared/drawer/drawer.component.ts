@@ -62,4 +62,8 @@ export class DrawerComponent implements OnInit, OnChanges {
   toggleDrawer() {
     this.drawer.toggle();
   }
+
+  clicked() {
+    console.log('clicked');
+  }
 }
