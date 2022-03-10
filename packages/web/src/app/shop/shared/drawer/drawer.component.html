@@ -8,14 +8,22 @@
     <chefia-drawer-button
       (click)="clicked()"
       [active]="false"
-      [icon]="'people'"
+      [icon]="'store_front'"
     >
       Sobre
     </chefia-drawer-button>
-    <chefia-drawer-button (click)="clicked()" [active]="true" [icon]="'menu'">
+    <chefia-drawer-button
+      (click)="clicked()"
+      [active]="true"
+      [icon]="'restaurant_menu'"
+    >
       Cardápio
     </chefia-drawer-button>
-    <chefia-drawer-button (click)="clicked()" [active]="false" [icon]="'menu'">
+    <chefia-drawer-button
+      (click)="clicked()"
+      [active]="false"
+      [icon]="'receipt_long'"
+    >
       Checkout
     </chefia-drawer-button>
   </mat-drawer>

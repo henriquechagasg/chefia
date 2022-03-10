@@ -2,71 +2,72 @@
 @import 'variables';
 
 .menu-container {
-  display: flex;
-  width: auto;
+  width: calc(100vw - 50px);
 
   .title {
     margin: 0 !important;
   }
 
-  .first-section-layer {
+  @include media('>=phone') {
+    width: calc(100vw - 100px);
+  }
+
+  @include media('>=tablet') {
+    width: calc(100vw - 200px);
+  }
+
+  @include media('>=desktop') {
+    width: auto;
+  }
+
+  .menu-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+    min-height: 50px;
     width: 100%;
-    max-width: calc(100% - 40px);
-    @include horizontalPadding;
+
+    mat-icon {
+      color: rgba(#fff, 0.5);
+    }
 
     @include media('>=desktop') {
-      max-width: calc(100% - 100px);
+      margin-bottom: 3.5rem;
+    }
+  }
+
+  .offer-cards-layer {
+    display: flex;
+    overflow-x: auto;
+    margin: 2rem 0;
+    padding-bottom: 1rem;
+
+    &::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    &::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background: rgba(0, 0, 0, 0.1);
     }
 
-    .menu-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 2rem;
-      min-height: 50px;
-      width: 100%;
-
-      mat-icon {
-        color: rgba(#fff, 0.5);
-      }
-
-      @include media('>=desktop') {
-        margin-bottom: 3.5rem;
-      }
+    &::-webkit-scrollbar-thumb {
+      border-radius: 10px;
+      border: none;
+      background: rgba(0, 0, 0, 0.2);
     }
 
-    .offer-cards-layer {
-      display: flex;
-      overflow-x: auto;
-      margin: 2rem 0;
-      padding-bottom: 1rem;
-
-      &::-webkit-scrollbar {
-        width: 6px;
-        height: 6px;
-      }
-      &::-webkit-scrollbar-track {
-        border-radius: 10px;
-        background: rgba(0, 0, 0, 0.1);
-      }
-
-      &::-webkit-scrollbar-thumb {
-        border-radius: 10px;
-        border: none;
-        background: rgba(0, 0, 0, 0.2);
-      }
-
-      &::-webkit-scrollbar-thumb:hover {
-        background: rgba(0, 0, 0, 0.4);
-      }
-
-      &::-webkit-scrollbar-thumb:active {
-        background: rgba(0, 0, 0, 0.4);
-      }
+    &::-webkit-scrollbar-thumb:hover {
+      background: rgba(0, 0, 0, 0.4);
     }
 
-    .small-action-items-layer {
-      margin: 2rem 0;
+    &::-webkit-scrollbar-thumb:active {
+      background: rgba(0, 0, 0, 0.4);
     }
+  }
+
+  .small-action-items-layer {
+    margin: 2rem 0;
   }
 }
